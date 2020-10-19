@@ -1,0 +1,32 @@
+{
+  "name": "openapi-express-router",
+  "version": "1.0.0",
+  "description": "A simple express router based on an OpenApi 3.0 definition",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "lint": "eslint src/**/*.js",
+    "prettify": "prettier --write 'src/**/*.js'"
+  },
+  "keywords": [
+    "OpenApi",
+    "3.0",
+    "Express",
+    "Swagger",
+    "Router",
+    "Middleware",
+    "Validation"
+  ],
+  "author": "Alexander Davies",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "express": "^4.17.1",
+    "jest": "^26.5.3",
+    "prettier": "^2.1.2",
+    "supertest": "^5.0.0"
+  },
+  "dependencies": {}
+}

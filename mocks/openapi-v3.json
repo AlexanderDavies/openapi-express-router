@@ -1,0 +1,98 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Default setup for the node-create-api cli",
+    "version": "1.0.0",
+    "title": "default-api"
+  },
+  "paths": {
+    "/health/ping": {
+      "get": {
+        "tags": [
+          "root"
+        ],
+        "summary": "Health check route",
+        "description": "Returns pong if the server is healthy",
+        "operationId": "healthController",
+        "x-middleware": [
+          "healthMiddleware"
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/healthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/api/v1"
+    },
+    {
+      "url": "https://www.test-server.com.au:8080/api/v1"
+    },
+    {
+      "url": "https://www.test-server.com.au:8080/other-url/api/v1"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "healthResponse": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/responseMeta"
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "uptime": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "responseMeta": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
