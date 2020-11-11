@@ -1,6 +1,6 @@
 # OPENAPI-EXPRESS-ROUTER
 
-An simple Node Express library to build and connect Express routes based on an OpenAPI version 2 or 3 spec.
+An simple Node library to build and connect Express routes based on an OpenAPI version 2 or 3 spec.
 
 # Basic Usage
 
@@ -8,8 +8,6 @@ An simple Node Express library to build and connect Express routes based on an O
     const { connectRoutes } = require('openapi-express-router');
     const controllers = require('./api/controllers.js);
     const middleware = require('./api/middleware.js);
-
-    //....
 
     app = express();
 
@@ -24,7 +22,7 @@ An simple Node Express library to build and connect Express routes based on an O
 
 # Controllers
 
-Controllers are uniquely identified in the Swagger 2 or OpenAPI 3 specification by the x-request-id i.e. the operationId matches the name of the controller.
+Controllers are uniquely identified in the Swagger 2 or OpenAPI 3 specification by the x-request-id i.e. the operationId must match the name of the controller.
 
     "paths": {
         "/health/ping": {
@@ -54,12 +52,12 @@ Controllers are connected via the options object and can be nested at any level 
         }
     }
 
-If no controller is found which matches the operationId an error will be thrown with the following error:
-    `No controller found for ${pathsKey}/${pathKey} which matches operationId: ${operationId}`
+If no controller is found which matches the operationId following error will be thrown:
+`No controller found for ${pathsKey}/${pathKey} which matches operationId: ${operationId}`
 
 # Middleware
 
-Middleware functions are optional but can be added to the Swagger 2 or OpenAPI 3 spec using the x-middleware array property
+Middleware functions are optional but can be added to the Swagger 2 or OpenAPI 3 spec using the x-middleware array property.
 
     "/health/ping": {
         "get": {
@@ -74,7 +72,7 @@ Middleware functions are optional but can be added to the Swagger 2 or OpenAPI 3
 
 Like controllers, middleware are connected via the options object and can be nested at any level e.g.
 
-  const options = {  
+    const options = {  
         middleware: {
             nestedMiddleware: {
                 healthMiddleware = (req, res, next) => {
