@@ -1,4 +1,11 @@
-const { getApiVersion, formatPaths, getBasePath } = require('./parse-routes');
+/*
+  1. Testing for swagger 2
+  3. Validation
+*/
+
+'use strict';
+
+const { getApiVersion, formatPaths, getBasePath } = require('./parse-routes/parse-routes');
 
 exports.connectRoutes = (openapi, options = {}) => {
   if (typeof openapi !== 'object' || Array.isArray(openapi)) {
@@ -33,3 +40,5 @@ exports.connectRoutes = (openapi, options = {}) => {
     return app;
   };
 };
+
+

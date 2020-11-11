@@ -1,5 +1,25 @@
+'use strict';
+
 const { get } = require('lodash');
 const { URL } = require('url');
+
+exports.recursiveSearch = (obj, key) => {
+  let val = null;
+
+  Object.keys(obj).some((k) => {
+    if (k === key) {
+      val = obj[k];
+      return true;
+    }
+
+    if (obj[k] && typeof obj[k] === 'object' && !Array.isArray(obj[k])) {
+      val = this.recursiveSearch(obj[k], key);
+      return val !== undefined;
+    }
+  });
+
+  return val;
+};
 
 exports.getBasePathFromServer = (openapi) => {
   const servers = get(openapi, 'servers');
@@ -64,7 +84,9 @@ exports.mapMiddleware = (routeMiddleware, middleware) => {
 
   if (middleware) {
     routeMiddleware.forEach((rmw) => {
-      const mpMw = middleware[rmw];
+      const mpMw = this.recursiveSearch(middleware, rmw);
+
+      // const mpMw = middleware[rmw];
 
       if (!mpMw) {
         throw new Error(
@@ -89,12 +111,18 @@ exports.formatPaths = (paths, controllers, middleware) => {
         paths[pathsKey][pathKey]['x-middleware'],
         middleware
       );
+      
+      const controller = this.recursiveSearch(controllers, operationId);
+
+      if(!controller) {
+        throw new Error(`No controller found for ${pathsKey}/${pathKey} which matches operationId: ${operationId}`)
+      }
 
       const formattedPath = {
         path: this.parseParams(pathsKey),
         operation: pathKey,
-        controller: controllers[operationId],
-        mappedMiddleware: mappedMiddleware
+        controller,
+        mappedMiddleware
       };
       formattedPaths.push(formattedPath);
     });

@@ -1,0 +1,102 @@
+ warn --- config file  - /Users/alexanderdavies/.config/verdaccio/config.yaml
+ warn --- Verdaccio started
+ warn --- Plugin successfully loaded: verdaccio-htpasswd
+ warn --- Plugin successfully loaded: verdaccio-audit
+ warn --- http address - http://localhost:4873/ - verdaccio/4.8.0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/4.style.b3d2b69b057068c678ca.css', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/4.style.b3d2b69b057068c678ca.css', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/manifest.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/manifest.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/main.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/main.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/1.style.f5bfe8c872c998c962a0.css', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/1.style.f5bfe8c872c998c962a0.css', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/1.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/1.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/5.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/5.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/0.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/0.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/6.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/6.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/b1e0d4d4ee23474aee6616f444fc7aa9.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/b1e0d4d4ee23474aee6616f444fc7aa9.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/3025c327f6f127d5190f14b16e75b41b.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/3025c327f6f127d5190f14b16e75b41b.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/d96f386211a24e791aaa1f929fd56f91.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/d96f386211a24e791aaa1f929fd56f91.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/de092a6cac20ccf2cd373644425a13ce.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/de092a6cac20ccf2cd373644425a13ce.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/fa99a58eb30e323243a5b2dbae7eacdd.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/fa99a58eb30e323243a5b2dbae7eacdd.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/ac0877b3e5dab78d7b5319b32cb03b11.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/ac0877b3e5dab78d7b5319b32cb03b11.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/24fd3a77ee5710ead382075bbfa36d17.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/24fd3a77ee5710ead382075bbfa36d17.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/ee698c70f8c67df1d710081ab8fc41a2.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/ee698c70f8c67df1d710081ab8fc41a2.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/75b39b2fd2bf8343d4ba4743ba3d3466.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/75b39b2fd2bf8343d4ba4743ba3d3466.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/6f6560222974090c1ef11e84623ff803.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/6f6560222974090c1ef11e84623ff803.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/93df1ce974e744e7d98f5d842da74ba0.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/93df1ce974e744e7d98f5d842da74ba0.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/fonts/roboto-latin-400.woff2', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/fonts/roboto-latin-400.woff2', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/fonts/roboto-latin-500.woff2', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/fonts/roboto-latin-500.woff2', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/verdaccio/packages', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/verdaccio/packages', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/4.style.b3d2b69b057068c678ca.css', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/4.style.b3d2b69b057068c678ca.css', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/manifest.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/manifest.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/vendors.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/main.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/main.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/1.style.f5bfe8c872c998c962a0.css', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/1.style.f5bfe8c872c998c962a0.css', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/1.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/1.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/5.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/5.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/0.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/0.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/6.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/6.499d1ba1a90958865a0e.js', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/b1e0d4d4ee23474aee6616f444fc7aa9.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/b1e0d4d4ee23474aee6616f444fc7aa9.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/3025c327f6f127d5190f14b16e75b41b.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/3025c327f6f127d5190f14b16e75b41b.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/d96f386211a24e791aaa1f929fd56f91.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/d96f386211a24e791aaa1f929fd56f91.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/de092a6cac20ccf2cd373644425a13ce.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/de092a6cac20ccf2cd373644425a13ce.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/fa99a58eb30e323243a5b2dbae7eacdd.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/fa99a58eb30e323243a5b2dbae7eacdd.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/ac0877b3e5dab78d7b5319b32cb03b11.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/ac0877b3e5dab78d7b5319b32cb03b11.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/24fd3a77ee5710ead382075bbfa36d17.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/24fd3a77ee5710ead382075bbfa36d17.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/ee698c70f8c67df1d710081ab8fc41a2.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/ee698c70f8c67df1d710081ab8fc41a2.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/75b39b2fd2bf8343d4ba4743ba3d3466.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/75b39b2fd2bf8343d4ba4743ba3d3466.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/6f6560222974090c1ef11e84623ff803.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/6f6560222974090c1ef11e84623ff803.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/93df1ce974e744e7d98f5d842da74ba0.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/static/93df1ce974e744e7d98f5d842da74ba0.svg', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/verdaccio/packages', bytes: 0/0
+ http <-- 304, user: null(127.0.0.1), req: 'GET /-/verdaccio/packages', bytes: 0/0
+ warn --- config file  - /Users/alexanderdavies/.config/verdaccio/config.yaml
+ warn --- Verdaccio started
+ warn --- Plugin successfully loaded: verdaccio-htpasswd
+ warn --- Plugin successfully loaded: verdaccio-audit
+ warn --- http address - http://localhost:4873/ - verdaccio/4.8.0

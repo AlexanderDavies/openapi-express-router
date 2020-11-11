@@ -1,9 +1,11 @@
+'use strict';
+
 const express = require('express');
 
 const { connectRoutes } = require('./connect-routes');
 const { mockControllers } = require('../../mocks/controllers');
 const { mockMiddleware } = require('../../mocks/middleware');
-const openApiMock = require('../../mocks/openapi-v3.json');
+const openApiMock = require('../../mocks/openapi-v3-example.json');
 
 describe('Connect Routes', () => {
   let app;
@@ -22,11 +24,13 @@ describe('Connect Routes', () => {
 
       connect(app);
 
-      const routes = app._router.stack.slice(2, 4);
+      const routes = app._router.stack.slice(2, 6);
 
-      expect(routes).toHaveLength(2);
+      expect(routes).toHaveLength(4);
       expect(routes[0].route.path).toEqual('/api/v1/health/ping');
-      expect(routes[1].route.path).toEqual('/other-url/api/v1/health/ping');
+      expect(routes[1].route.path).toEqual('/api/v1/user/:id');
+      expect(routes[2].route.path).toEqual('/other-url/api/v1/health/ping');
+      expect(routes[3].route.path).toEqual('/other-url/api/v1/user/:id');
     });
   });
 });

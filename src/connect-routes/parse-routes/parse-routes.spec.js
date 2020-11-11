@@ -1,7 +1,38 @@
-const { getApiVersion, parseParams } = require('./parse-routes');
-const version3Mock = require('../../mocks/openapi-v3.json');
+'use strict';
+
+const {
+  getApiVersion,
+  parseParams,
+  getBasePath,
+  getBasePathFromServer
+} = require('./parse-routes');
+const version3Mock = require('../../../mocks/openapi-v3-example.json');
 
 describe('Util', () => {
+  describe('When getting the base path from the server', () => {
+    it('should extract the path if it is present ', () => {
+      const result = getBasePathFromServer(version3Mock);
+
+      expect(result).toEqual(['/api/v1', '/other-url/api/v1']);
+    });
+  });
+
+  describe('When getting the base path', () => {
+    it('should return the base path if using OpenAPI version 2', () => {});
+
+    it('should return the base path if using OpenAPI version 3', () => {
+      const result = getBasePath(version3Mock, 3);
+
+      expect(result).toEqual(['/api/v1', '/other-url/api/v1']);
+    });
+
+    it('should return an empty string if no version is provided', () => {
+      const result = getBasePath();
+
+      expect(result).toEqual('');
+    });
+  });
+
   describe('When parsing route params', () => {
     let noParamPath = '/health/ping';
     let paramPath = '/user/{id}';
