@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "description": "A simple express router based on an OpenApi 3.0 definition",
   "main": "index.js",
-  "scripts": {
-    "test": "npm test",
-    "lint": "eslint src/**/*.js",
-    "prettify": "prettier --write 'src/**/*.js'"
-  },
   "keywords": [
     "OpenApi",
     "3.0",
@@ -19,6 +14,17 @@
   ],
   "author": "Alexander Davies",
   "license": "ISC",
+  "engines": {
+    "node": ">=10.15.0"
+  },
+  "scripts": {
+    "test": "jest src/**/*.js",
+    "lint": "eslint src/**/*.js --fix",
+    "format": "prettier --write 'src/**/*.js'"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.11.0",
@@ -27,6 +33,5 @@
     "jest": "^26.5.3",
     "prettier": "^2.1.2",
     "supertest": "^5.0.0"
-  },
-  "dependencies": {}
+  }
 }

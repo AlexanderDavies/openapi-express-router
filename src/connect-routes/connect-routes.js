@@ -1,8 +1,3 @@
-/*
-  1. Testing for swagger 2
-  3. Validation
-*/
-
 'use strict';
 
 const connectRoutesService = require('./connect-routes.service');
@@ -40,5 +35,3 @@ exports.connectRoutes = (openapi, options = {}) => {
     return app;
   };
 };
-
-

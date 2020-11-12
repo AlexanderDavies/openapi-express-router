@@ -2,6 +2,19 @@
 
 An simple Node library to build and connect Express routes based on an OpenAPI version 2 or 3 spec.
 
+# Prerequisites
+
+- node >=10.15.0
+- express >=4.0.0
+
+# Installation
+
+    npm install openapi-express-router
+    
+    //OR
+    
+    yarn add openapi-express-router
+
 # Basic Usage
 
     const express = require('express');
@@ -44,7 +57,7 @@ Controllers are connected via the options object and can be nested at any level 
 
     // OR
 
-    const options = {  
+    const options = {
         controllers: {
             nestedControllers: {
                 healthController = (req, res, next) => res.status(200).json({message: req.body.message})
@@ -52,7 +65,7 @@ Controllers are connected via the options object and can be nested at any level 
         }
     }
 
-If no controller is found which matches the operationId following error will be thrown:
+If no controller is found which matches the operationId the following error will be thrown:
 `No controller found for ${pathsKey}/${pathKey} which matches operationId: ${operationId}`
 
 # Middleware
@@ -72,7 +85,7 @@ Middleware functions are optional but can be added to the Swagger 2 or OpenAPI 3
 
 Like controllers, middleware are connected via the options object and can be nested at any level e.g.
 
-    const options = {  
+    const options = {
         middleware: {
             nestedMiddleware: {
                 healthMiddleware = (req, res, next) => {

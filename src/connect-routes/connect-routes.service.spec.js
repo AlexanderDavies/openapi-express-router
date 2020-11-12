@@ -7,7 +7,7 @@ const { mockMiddleware } = require('../../mocks/middleware');
 const { mockControllers } = require('../../mocks/controllers');
 
 describe('Connect Routes Service', () => {
-  let options = {
+  const options = {
     controllers: mockControllers,
     middleware: mockMiddleware
   };
@@ -47,9 +47,9 @@ describe('Connect Routes Service', () => {
   });
 
   describe('When parsing route params', () => {
-    let noParamPath = '/health/ping';
-    let paramPath = '/user/{id}';
-    let parsedParamPath = '/user/:id';
+    const noParamPath = '/health/ping';
+    const paramPath = '/user/{id}';
+    const parsedParamPath = '/user/:id';
 
     it('should return the path if no params found', () => {
       const path = connectRoutesService.parseParams(noParamPath);

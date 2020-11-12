@@ -15,7 +15,7 @@ describe('Connect Routes', () => {
   });
 
   describe('When connecting routes', () => {
-    let options = {
+    const options = {
       controllers: mockControllers,
       middleware: mockMiddleware
     };

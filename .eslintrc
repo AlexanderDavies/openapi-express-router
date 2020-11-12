@@ -13,7 +13,15 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "ignorePatterns": ["node_modules/", "src/**/*.spec.js"],
+  "overrides": [
+    {
+      "files": ["**/*.spec.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
+  "ignorePatterns": ["node_modules/"],
   "rules": {
     "semi": [0, "never"],
     "quotes": [1, "single", "avoid-escape"],
