@@ -1,6 +1,6 @@
 # OPENAPI-EXPRESS-ROUTER
 
-An simple Node package to build and connect Express routes based on an OpenAPI version 2 or 3 spec.
+An simple package to build and connect Express routes based on an OpenAPI 3 or Swagger 2 spec.
 
 # Prerequisites
 
@@ -36,7 +36,7 @@ An simple Node package to build and connect Express routes based on an OpenAPI v
 
     connect(app);
 
-# Controllers
+# Connecting Controllers
 
 Controllers are uniquely identified in the Swagger 2 or OpenAPI 3 specification by the x-request-id i.e. the operationId must match the name of the controller.
 
@@ -71,7 +71,7 @@ Controllers are connected via the options object and can be nested at any level 
 If no controller is found which matches the operationId the following error will be thrown:
 `No controller found for ${pathsKey}/${pathKey} which matches operationId: ${operationId}`
 
-# Middleware
+# Connecting Middleware
 
 Middleware functions are optional but can be added to the Swagger 2 or OpenAPI 3 spec using the x-middleware array property.
 

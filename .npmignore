@@ -2,7 +2,6 @@
 .eslintrc
 .prettierrc.json
 jest.config.js
-README.md
 wallaby.js
 mocks/
 *.spec.js

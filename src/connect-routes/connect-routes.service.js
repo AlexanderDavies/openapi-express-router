@@ -3,6 +3,14 @@
 const { get } = require('lodash');
 const { URL } = require('url');
 
+/**
+ * A recursive function to find and return the value based on a match of the property name to provided key
+ * @function
+ * @param {object} obj - an object on which to perform a recursive search
+ * @param {string} key - the name/key of the property to find and return
+ * @return {function}
+ */
+
 const recursiveSearch = (obj, key) => {
   let val = null;
 
@@ -20,6 +28,15 @@ const recursiveSearch = (obj, key) => {
 
   return val;
 };
+
+
+/**
+ * A function to extract the base path from the server defintion of OpenAPI 3.0
+ * @function
+ * @param {object} openapi - an OpenAPI 3 specification
+ * @return {Array}
+ */
+
 
 const getBasePathFromServer = (openapi) => {
   const servers = get(openapi, 'servers');
@@ -43,6 +60,14 @@ const getBasePathFromServer = (openapi) => {
   return [...basePaths];
 };
 
+/**
+ * A function to extract the base path from the either an OpenAPI 3 or Swagger 2 specification
+ * @function
+ * @param {object} openapi - an OpenAPI 3 or Swagger 2 specification
+ * @param {Number} openApiVersion - the version of the OpenAPI specification
+ * @return {String}
+ */
+
 const getBasePath = (openapi, openApiVersion) => {
   if (openApiVersion === 2) {
     return [get(openapi, 'basePath', '')];
@@ -54,6 +79,13 @@ const getBasePath = (openapi, openApiVersion) => {
 
   return '';
 };
+
+/**
+ * A function to extract the query parameters for a given path
+ * @function
+ * @param {String} path - the path string
+ * @return {String}
+ */
 
 const parseParams = (path) => {
   const paramIndex = path.indexOf('{');
@@ -67,6 +99,14 @@ const parseParams = (path) => {
 
   return `${basePath}:${param}`;
 };
+
+/**
+ * A function to map the middleware passed in to the x-middleware-id in the OpenAPI specification
+ * @function
+ * @param {Array} routeMiddleware - an array of x-middlware-id's 
+ * @param {object} middleware - an object containing the middleware functions
+ * @return {Array}
+ */
 
 const mapMiddleware = (routeMiddleware, middleware) => {
   if (!middleware && !routeMiddleware) {
@@ -85,8 +125,6 @@ const mapMiddleware = (routeMiddleware, middleware) => {
     routeMiddleware.forEach((rmw) => {
       const mpMw = recursiveSearch(middleware, rmw);
 
-      // const mpMw = middleware[rmw];
-
       if (!mpMw) {
         throw new Error(
           `Middleware: ${rmw}: defined in OpenAPI definition but not provided in options`
@@ -99,6 +137,15 @@ const mapMiddleware = (routeMiddleware, middleware) => {
 
   return [...mappedMiddleware];
 };
+
+/**
+ * A function to hook up the controllers and middleware to the paths defined in an OpenAPI 3 or Swagger 2 definition
+ * @function
+ * @param {Array} paths - an array of paths
+ * @param {object} controllers - an object containing the controller functions
+ * @param {object} middleware - an object containing the middleware functions
+ * @return {Array.<{path: String, operation: String, controller: Fnction, mappedMiddleware: Array}>}
+ */
 
 const formatPaths = (paths, controllers, middleware) => {
   const formattedPaths = [];
@@ -128,6 +175,15 @@ const formatPaths = (paths, controllers, middleware) => {
 
   return formattedPaths;
 };
+
+
+/**
+ * A function to return the api version from the spec
+ * 
+ * @param {Array} paths - an array of paths
+ * @param {object} openapi - an OpenAPI 3 or Swagger 2 specification
+ * @return {Number}
+ */
 
 const getApiVersion = (openapi) => {
   let openapiVersion = get(openapi, 'swagger');
