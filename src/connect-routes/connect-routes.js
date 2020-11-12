@@ -5,7 +5,7 @@
 
 'use strict';
 
-const { getApiVersion, formatPaths, getBasePath } = require('./parse-routes/parse-routes');
+const connectRoutesService = require('./connect-routes.service');
 
 exports.connectRoutes = (openapi, options = {}) => {
   if (typeof openapi !== 'object' || Array.isArray(openapi)) {
@@ -24,11 +24,11 @@ exports.connectRoutes = (openapi, options = {}) => {
 
   const { controllers, middleware = null } = options;
 
-  const formattedPaths = formatPaths(paths, controllers, middleware);
+  const formattedPaths = connectRoutesService.formatPaths(paths, controllers, middleware);
 
-  const openapiVersion = getApiVersion(openapi);
+  const openapiVersion = connectRoutesService.getApiVersion(openapi);
 
-  const basePaths = getBasePath(openapi, openapiVersion);
+  const basePaths = connectRoutesService.getBasePath(openapi, openapiVersion);
 
   return (app) => {
     basePaths.forEach((basePath) => {

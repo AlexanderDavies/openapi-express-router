@@ -3,7 +3,7 @@
 const { get } = require('lodash');
 const { URL } = require('url');
 
-exports.recursiveSearch = (obj, key) => {
+const recursiveSearch = (obj, key) => {
   let val = null;
 
   Object.keys(obj).some((k) => {
@@ -13,7 +13,7 @@ exports.recursiveSearch = (obj, key) => {
     }
 
     if (obj[k] && typeof obj[k] === 'object' && !Array.isArray(obj[k])) {
-      val = this.recursiveSearch(obj[k], key);
+      val = recursiveSearch(obj[k], key);
       return val !== undefined;
     }
   });
@@ -21,7 +21,7 @@ exports.recursiveSearch = (obj, key) => {
   return val;
 };
 
-exports.getBasePathFromServer = (openapi) => {
+const getBasePathFromServer = (openapi) => {
   const servers = get(openapi, 'servers');
 
   if (!servers || !Array.isArray(servers) || servers.length < 1) {
@@ -40,23 +40,22 @@ exports.getBasePathFromServer = (openapi) => {
     return acc;
   }, new Set());
 
-  console.log([...basePaths]);
   return [...basePaths];
 };
 
-exports.getBasePath = (openapi, openApiVersion) => {
+const getBasePath = (openapi, openApiVersion) => {
   if (openApiVersion === 2) {
     return [get(openapi, 'basePath', '')];
   }
 
   if (openApiVersion === 3) {
-    return this.getBasePathFromServer(openapi);
+    return getBasePathFromServer(openapi);
   }
 
   return '';
 };
 
-exports.parseParams = (path) => {
+const parseParams = (path) => {
   const paramIndex = path.indexOf('{');
 
   if (paramIndex === -1) {
@@ -69,7 +68,7 @@ exports.parseParams = (path) => {
   return `${basePath}:${param}`;
 };
 
-exports.mapMiddleware = (routeMiddleware, middleware) => {
+const mapMiddleware = (routeMiddleware, middleware) => {
   if (!middleware && !routeMiddleware) {
     return [];
   }
@@ -84,7 +83,7 @@ exports.mapMiddleware = (routeMiddleware, middleware) => {
 
   if (middleware) {
     routeMiddleware.forEach((rmw) => {
-      const mpMw = this.recursiveSearch(middleware, rmw);
+      const mpMw = recursiveSearch(middleware, rmw);
 
       // const mpMw = middleware[rmw];
 
@@ -101,25 +100,24 @@ exports.mapMiddleware = (routeMiddleware, middleware) => {
   return [...mappedMiddleware];
 };
 
-exports.formatPaths = (paths, controllers, middleware) => {
+const formatPaths = (paths, controllers, middleware) => {
   const formattedPaths = [];
 
   Object.keys(paths).forEach((pathsKey) => {
     Object.keys(paths[pathsKey]).forEach((pathKey) => {
       const operationId = paths[pathsKey][pathKey]['operationId'];
-      const mappedMiddleware = this.mapMiddleware(
-        paths[pathsKey][pathKey]['x-middleware'],
-        middleware
-      );
-      
-      const controller = this.recursiveSearch(controllers, operationId);
+      const mappedMiddleware = mapMiddleware(paths[pathsKey][pathKey]['x-middleware'], middleware);
 
-      if(!controller) {
-        throw new Error(`No controller found for ${pathsKey}/${pathKey} which matches operationId: ${operationId}`)
+      const controller = recursiveSearch(controllers, operationId);
+
+      if (!controller) {
+        throw new Error(
+          `No controller found for ${pathsKey}/${pathKey} which matches operationId: ${operationId}`
+        );
       }
 
       const formattedPath = {
-        path: this.parseParams(pathsKey),
+        path: parseParams(pathsKey),
         operation: pathKey,
         controller,
         mappedMiddleware
@@ -131,7 +129,7 @@ exports.formatPaths = (paths, controllers, middleware) => {
   return formattedPaths;
 };
 
-exports.getApiVersion = (openapi) => {
+const getApiVersion = (openapi) => {
   let openapiVersion = get(openapi, 'swagger');
 
   if (!openapiVersion) {
@@ -143,4 +141,14 @@ exports.getApiVersion = (openapi) => {
   }
 
   return +openapiVersion.charAt(0);
+};
+
+module.exports = {
+  recursiveSearch,
+  getBasePathFromServer,
+  getBasePath,
+  parseParams,
+  mapMiddleware,
+  formatPaths,
+  getApiVersion
 };
