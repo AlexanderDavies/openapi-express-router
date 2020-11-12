@@ -19,6 +19,9 @@ An simple Node package to build and connect Express routes based on an OpenAPI v
 
     const express = require('express');
     const { connectRoutes } = require('openapi-express-router');
+    
+    #import OpenAPI 3 or Swagger 2 spec, controllers and middleware
+    const openApi = require('./api/open-api.json);
     const controllers = require('./api/controllers.js);
     const middleware = require('./api/middleware.js);
 
@@ -29,7 +32,7 @@ An simple Node package to build and connect Express routes based on an OpenAPI v
         middleware
     };
 
-    const connect = connectRoutes(openApiMock, options);
+    const connect = connectRoutes(openApi, options);
 
     connect(app);
 
