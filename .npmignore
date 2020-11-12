@@ -6,6 +6,8 @@ README.md
 wallaby.js
 mocks/
 *.spec.js
+husky.config.js
+commitlint.config.js
 
 # Logs
 logs

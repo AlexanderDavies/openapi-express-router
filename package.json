@@ -4,7 +4,7 @@
   "description": "An simple Node package to build and connect Express routes based on an OpenAPI version 2 or 3 spec",
   "main": "index.js",
   "keywords": [
-    "OpenApi",
+    "OpenAPI",
     "3.0",
     "Express",
     "Swagger",
@@ -15,7 +15,7 @@
   "author": "Alexander Davies",
   "license": "ISC",
   "engines": {
-    "node": ">=10.15.0"
+    "node": ">=10.22.0"
   },
   "scripts": {
     "test": "jest src/**/*.js",
@@ -26,10 +26,13 @@
     "lodash": "^4.17.20"
   },
   "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.13.0",
     "express": "^4.17.1",
+    "husky": "^4.3.0",
     "jest": "^26.5.3",
     "prettier": "^2.1.2",
     "supertest": "^5.0.0"

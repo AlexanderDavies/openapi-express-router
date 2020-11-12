@@ -4,14 +4,14 @@ An simple Node package to build and connect Express routes based on an OpenAPI v
 
 # Prerequisites
 
-- node >=10.15.0
+- node >=10.22.0
 - express >=4.0.0
 
 # Installation
 
     npm install openapi-express-router
     
-    //OR
+    // OR
     
     yarn add openapi-express-router
 
