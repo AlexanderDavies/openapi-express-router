@@ -1,6 +1,6 @@
 # OPENAPI-EXPRESS-ROUTER
 
-An simple Node library to build and connect Express routes based on an OpenAPI version 2 or 3 spec.
+An simple Node package to build and connect Express routes based on an OpenAPI version 2 or 3 spec.
 
 # Prerequisites
 

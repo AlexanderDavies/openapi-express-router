@@ -1,7 +1,7 @@
 {
   "name": "openapi-express-router",
   "version": "1.0.0",
-  "description": "A simple express router based on an OpenApi 3.0 definition",
+  "description": "An simple Node package to build and connect Express routes based on an OpenAPI version 2 or 3 spec",
   "main": "index.js",
   "keywords": [
     "OpenApi",
