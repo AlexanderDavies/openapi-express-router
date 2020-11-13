@@ -1,7 +1,5 @@
 'use strict';
 
-const connectRoutes = require('./connect-routes');
+const { connectRoutes } = require('./connect-routes/connect-routes');
 
-module.exports = {
-  connectRoutes
-};
+exports.connectRoutes = connectRoutes;

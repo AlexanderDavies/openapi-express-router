@@ -1,6 +1,6 @@
 # OPENAPI-EXPRESS-ROUTER
 
-An simple package to build and connect Express routes based on an OpenAPI 3 or Swagger 2 spec.
+An simple package to build and connect Express routes based on an OpenAPI 3 or Swagger 2 JSON spec.
 
 # Prerequisites
 
