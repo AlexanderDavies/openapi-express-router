@@ -38,5 +38,6 @@
     "jsdoc": "^3.6.6",
     "prettier": "^2.1.2",
     "supertest": "^5.0.0"
-  }
+  },
+  "types": "types.d.ts"
 }
