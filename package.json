@@ -1,6 +1,6 @@
 {
   "name": "openapi-express-router",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple package to build and connect Express routes based on an OpenAPI 3 or Swagger 2 JSON spec",
   "main": "src/index.js",
   "keywords": [
@@ -12,6 +12,10 @@
     "Middleware",
     "Validation"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderDavies/openapi-express-router"
+  },
   "author": "Alexander Davies",
   "license": "ISC",
   "engines": {

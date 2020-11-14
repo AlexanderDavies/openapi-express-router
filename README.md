@@ -38,7 +38,7 @@ An simple package to build and connect Express routes based on an OpenAPI 3 or S
 
 # Connecting Controllers
 
-Controllers are uniquely identified in the Swagger 2 or OpenAPI 3 specification by the x-request-id i.e. the operationId must match the name of the controller.
+Controllers are uniquely identified in the Swagger 2 or OpenAPI 3 specification by the operationId i.e. the operationId must match the name of the controller.
 
     "paths": {
         "/health/ping": {
